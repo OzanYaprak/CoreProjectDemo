@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+@* PARTIAL VIEW KULLANIMI *@
+
+@* <partial name="_HeaderPartial" /> *@
+@await Html.PartialAsync("_HeaderPartial") @*ASENKRON HALİ*@
+
+<body>
+    @await Html.PartialAsync("_NavbarPartial")
+    <div id="layoutSidenav">
+        @await Html.PartialAsync("_SidebarPartial")
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4 my-4">
+                    @RenderBody()
+                </div>
+            </main>
+            @await Html.PartialAsync("_FooterPartial")
+        </div>
+    </div>
+    @await Html.PartialAsync("_ScriptsPartial")
+
+</body>
+</html>
