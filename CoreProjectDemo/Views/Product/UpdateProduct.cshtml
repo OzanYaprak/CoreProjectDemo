@@ -1,0 +1,23 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "UpdateProduct";
+}
+
+<form asp-controller="Product" asp-action="UpdateProduct" method="post">
+    <input asp-for="ProductID" type="hidden" />
+    <div asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="ProductName">Ürün adı</label>
+        <input asp-for="ProductName" type="text" class="form-control" id="productname">
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductPrice">Fiyat</label>
+        <input asp-for="ProductPrice" type="text" class="form-control" id="productprice">
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductStock">Stok</label>
+        <input asp-for="ProductStock" type="text" class="form-control" id="productstock">
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Kaydet</button>
+</form>

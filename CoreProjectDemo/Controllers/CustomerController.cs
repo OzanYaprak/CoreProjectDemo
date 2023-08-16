@@ -7,31 +7,31 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CoreProjectDemo.Controllers
 {
-    public class ProductController : Controller
+    public class CustomerController : Controller
     {
-        ProductManager productManager = new ProductManager(new EFProductDAL());
+        CustomerManager customerManager = new CustomerManager(new EFCustomerDAL());
 
         public IActionResult Index()
         {
-            var products = productManager.GetAll();
+            var customers = customerManager.GetAll();
 
-            return View(products);
+            return View(customers);
         }
 
         [HttpGet]
-        public IActionResult AddProduct()
+        public IActionResult AddCustomer()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult AddProduct(Product product)
+        public IActionResult AddCustomer(Customer customer)
         {
-            ProductValidator validationRules = new ProductValidator();
-            ValidationResult validationResult = validationRules.Validate(product);
+            CustomerValidator validationRules = new CustomerValidator();
+            ValidationResult validationResult = validationRules.Validate(customer);
 
             if (validationResult.IsValid)
             {
-                productManager.Add(product);
+                customerManager.Add(customer);
 
                 return RedirectToAction("Index");
             }
@@ -48,26 +48,26 @@ namespace CoreProjectDemo.Controllers
         }
 
         [HttpGet]
-        public IActionResult DeleteProduct(int id)
+        public IActionResult DeleteCustomer(int id)
         {
-            var deletedProduct = productManager.GetByID(id);
+            var deletedProduct = customerManager.GetByID(id);
 
-            productManager.Delete(deletedProduct);
+            customerManager.Delete(deletedProduct);
 
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public IActionResult UpdateProduct(int id)
+        public IActionResult UpdateCustomer(int id)
         {
-            var updatedProduct = productManager.GetByID(id);
+            var updatedCustomer = customerManager.GetByID(id);
 
-            return View(updatedProduct);
+            return View(updatedCustomer);
         }
         [HttpPost]
-        public IActionResult UpdateProduct(Product product)
+        public IActionResult UpdateCustomer(Customer customer)
         {
-            productManager.Update(product);
+            customerManager.Update(customer);
 
             return RedirectToAction("Index");
         }

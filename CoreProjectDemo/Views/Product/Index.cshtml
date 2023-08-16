@@ -22,7 +22,7 @@
                 <td>@item.ProductStock</td>
                 <td>
                     <a asp-controller="Product" asp-action="DeleteProduct" asp-route-id="@item.ProductID" class="btn btn-danger">Sil</a>
-                    <a href="" class="ms-2 btn btn-warning">Güncelle</a>
+                    <a asp-controller="Product" asp-action="UpdateProduct" asp-route-id="@item.ProductID" class="ms-2 btn btn-warning">Güncelle</a>
                 </td>
             </tr>
         }
