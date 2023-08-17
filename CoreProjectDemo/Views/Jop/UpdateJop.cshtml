@@ -1,0 +1,15 @@
+﻿@model Jop
+@{
+    ViewData["Title"] = "UpdateProduct";
+}
+
+<form asp-controller="Jop" asp-action="UpdateJop" method="post">
+    <input asp-for="JobID" type="hidden" />
+    <div asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="JobName">Ürün adı</label>
+        <input asp-for="JobName" type="text" class="form-control" id="productname">
+    </div>
+    <button type="submit" class="btn btn-secondary mt-3">Güncelle</button>
+</form>
