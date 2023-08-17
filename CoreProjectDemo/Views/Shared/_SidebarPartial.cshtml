@@ -13,9 +13,13 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Müşteriler
                 </a>
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" asp-controller="Category" asp-action="Index">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Kategoriler
+                </a>
+                <a class="nav-link" asp-controller="Jop" asp-action="Index">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Meslekler
                 </a>
 
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -28,6 +32,7 @@
                         <a class="nav-link" asp-controller="Product" asp-action="AddProduct">Yeni Ürün Girişi</a>
                         <a class="nav-link" asp-controller="Customer" asp-action="AddCustomer">Yeni Müşteri Girişi</a>
                         <a class="nav-link" asp-controller="Category" asp-action="AddCategory">Yeni Kategori Girişi</a>
+                        <a class="nav-link" asp-controller="Jop" asp-action="AddJop">Yeni Meslek Girişi</a>
                     </nav>
                 </div>
               

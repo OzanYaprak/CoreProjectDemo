@@ -1,0 +1,27 @@
+﻿@model List<Jop>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+    <table class="table table-responsive">
+        <tr style="color:#0b5ed7" class="text-center">
+            <th>#</th>
+            <th>Meslek Adı</th>
+            <th>İşlemler</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="text-center">
+                <td style="color:red">@item.JobID</td>
+                <td>@item.JobName</td>
+                <td>
+                    <a asp-controller="Jop" asp-action="DeleteJop" asp-route-id="@item.JobID" class="btn btn-danger">Sil</a>
+                    <a asp-controller="Jop" asp-action="UpdateJop" asp-route-id="@item.JobID" class="ms-2 btn btn-warning">Güncelle</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
