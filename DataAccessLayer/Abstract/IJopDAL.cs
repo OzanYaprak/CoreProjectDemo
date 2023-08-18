@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IJopDAL : IGenericDAL<Jop>
+    public interface IJobDAL : IGenericDAL<Job>
     {
     }
 }

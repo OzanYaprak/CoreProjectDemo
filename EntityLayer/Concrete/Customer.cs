@@ -15,6 +15,6 @@ namespace EntityLayer.Concrete
         public string CustomerCity { get; set; }
 
         public int JopID { get; set; }
-        public Jop Jop { get; set; }
+        public Job Jop { get; set; }
     }
 }

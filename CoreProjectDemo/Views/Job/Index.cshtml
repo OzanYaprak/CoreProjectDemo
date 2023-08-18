@@ -1,4 +1,4 @@
-﻿@model List<Jop>
+﻿@model List<Job>
 
 @{
     ViewData["Title"] = "Index";
@@ -17,9 +17,9 @@
                 <td style="color:red">@item.JobID</td>
                 <td>@item.JobName</td>
                 <td>
-                    <a asp-controller="Jop" asp-action="DeleteJop" asp-route-id="@item.JobID" class="btn btn-danger">Sil</a>
-                    <a asp-controller="Jop" asp-action="UpdateJop" asp-route-id="@item.JobID" class="ms-2 btn btn-warning">Güncelle</a>
-                    <a asp-controller="Jop" asp-action="DetailsJop" asp-route-id="@item.JobID" class="ms-2 btn btn-info">Detaylar</a>
+                    <a asp-controller="Job" asp-action="DeleteJob" asp-route-id="@item.JobID" class="btn btn-danger">Sil</a>
+                    <a asp-controller="Job" asp-action="UpdateJob" asp-route-id="@item.JobID" class="ms-2 btn btn-warning">Güncelle</a>
+                    <a asp-controller="Job" asp-action="DetailsJob" asp-route-id="@item.JobID" class="ms-2 btn btn-info">Detaylar</a>
                 </td>
             </tr>
         }

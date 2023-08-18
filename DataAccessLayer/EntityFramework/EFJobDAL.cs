@@ -4,7 +4,7 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EFJopDAL : GenericRepository<Jop>, IJopDAL
+    public class EFJobDAL : GenericRepository<Job>, IJobDAL
     {
     }
 }
