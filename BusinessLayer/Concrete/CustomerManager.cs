@@ -1,17 +1,13 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
     public class CustomerManager : ICustomerService
     {
-        ICustomerDAL _customerDAL;
+        private ICustomerDAL _customerDAL;
 
         public CustomerManager(ICustomerDAL customerDAL)
         {
@@ -36,6 +32,11 @@ namespace BusinessLayer.Concrete
         public Customer GetByID(int id)
         {
             return _customerDAL.GetByID(id);
+        }
+
+        public List<Customer> GetCustomerListIncludeJobs()
+        {
+            return _customerDAL.GetCustomerListIncludeJobs();
         }
 
         public void Update(Customer t)

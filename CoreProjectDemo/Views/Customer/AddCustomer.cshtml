@@ -15,5 +15,11 @@
         <label asp-for="CustomerCity">Şehir</label>
         <input asp-for="CustomerCity" type="text" class="form-control" id="customercity">
     </div>
+    <div class="form-group">
+        <label asp-for="JopID">Meslek</label>
+        <select class="form-control mt-2" asp-for="JopID" asp-items="@(new SelectList(ViewBag.jobList,"Value","Text"))">
+            <option value="" selected disabled>Meslek seçiniz</option>
+        </select>
+    </div>
     <button type="submit" class="btn btn-primary mt-3">Kaydet</button>
 </form>
