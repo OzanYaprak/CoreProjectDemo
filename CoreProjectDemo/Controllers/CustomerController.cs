@@ -35,6 +35,13 @@ namespace CoreProjectDemo.Controllers
                                                            Value = x.JobID.ToString()
                                                        }).ToList();
 
+            if (!ModelState.IsValid)
+            {
+                ViewBag.seçimhatası = "Lütfen bir meslek seçiniz";
+
+                return View();
+            }
+
             ViewBag.jobList = jobListForDropdown;
             
             //DROPDOWN LİST YAZILIMASI BİTİŞ

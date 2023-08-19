@@ -17,11 +17,10 @@ namespace CoreProjectDemo.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddJop()
+        public IActionResult AddJob()
         {
             return View();
         }
-
         [HttpPost]
         public IActionResult AddJob(Job job)
         {
@@ -47,7 +46,6 @@ namespace CoreProjectDemo.Controllers
 
             return View(updatedJob);
         }
-
         [HttpPost]
         public IActionResult UpdateJob(Job job)
         {
@@ -55,5 +53,6 @@ namespace CoreProjectDemo.Controllers
 
             return RedirectToAction("Index");
         }
+
     }
 }
