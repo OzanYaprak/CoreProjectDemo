@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(SQLContext))]
-    [Migration("20230819120700_identityLibrary")]
-    partial class identityLibrary
+    [Migration("20230819212254_identitylibrary")]
+    partial class identitylibrary
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
