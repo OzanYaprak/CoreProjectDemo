@@ -1,3 +1,4 @@
+using CoreProjectDemo.Models;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Builder;
@@ -26,7 +27,7 @@ namespace CoreProjectDemo
         {
             //******IDENTITY KÜTÜP. ÝLE BÝRLÝKTE YAZILDI
             services.AddDbContext<SQLContext>();
-            services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<SQLContext>();
+            services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<SQLContext>().AddErrorDescriber<CustomIdentityValidator>();
             //******
 
 
