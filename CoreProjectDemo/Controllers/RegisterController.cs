@@ -49,3 +49,11 @@ namespace CoreProjectDemo.Controllers
         }
     }
 }
+/*
+ * 6 KARAKTER
+ * 1 BÜYÜK HARF
+ * 1 KÜÇÜK HARF
+ * 1 TANE SEMBOL
+ */
+
+ //ŞİFRE: Ozanyaprak1991!
