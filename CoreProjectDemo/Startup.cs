@@ -1,15 +1,13 @@
 using CoreProjectDemo.Models;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CoreProjectDemo
 {
@@ -32,6 +30,19 @@ namespace CoreProjectDemo
 
 
             services.AddControllersWithViews();
+
+            //AUTHENTICATION ISLEMLERI ICIN YAZILDI (SETTINGS/LOGIN/LOGOUT)
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+
+            services.ConfigureApplicationCookie(options => 
+            {
+                options.LoginPath = "/Login/Index";
+                options.LogoutPath = "/Login/Logout";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +57,9 @@ namespace CoreProjectDemo
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
+
+            //AUTHENTICATION ISLEMLERI ICIN YAZILDI (SETTINGS/LOGIN/LOGOUT)
+            app.UseAuthentication();
 
             app.UseRouting();
 

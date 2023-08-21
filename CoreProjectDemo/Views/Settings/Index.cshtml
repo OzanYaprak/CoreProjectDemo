@@ -1,7 +1,37 @@
-﻿
+﻿@model UserEditViewModel
+
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Şifre Sayfası</h1>
+<h1>Ayarlar</h1>
 
+<form asp-controller="Settings" asp-action="Index" method="post">
+    <div class="form-floating mb-3">
+        <input class="form-control" asp-for="Name" name="Name" id="inputName" type="text" placeholder="" />
+        <label for="inputName">İsminiz</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input class="form-control" asp-for="Surname" name="Surname" id="inputSurname" type="text" placeholder="" />
+        <label for="inputSurname">Soyisminiz</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input class="form-control" asp-for="Email" name="Email" id="inputEmail" type="text" placeholder="" />
+        <label for="inputEmail">Email Adresiniz</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input class="form-control" asp-for="Gender" name="Gender" id="inputGender" type="text" placeholder="" />
+        <label for="inputGender">Cinsiyet</label>
+    </div>
+
+
+    <div class="form-floating mb-3">
+        <input class="form-control" asp-for="Password" name="Password" id="inputPassword" type="password" placeholder="" />
+        <label for="inputPassword">Şifre</label>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-end mt-4 mb-0">
+        <button type="submit" class="btn btn-outline-success">Kaydet</button>
+    </div>
+</form>

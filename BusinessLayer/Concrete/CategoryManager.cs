@@ -1,45 +1,42 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class CategoryManager : ICategoryService
+    public class CategoryManager : IGenericService<Category>
     {
-        ICategoryService _categoryService;
+        ICategoryDAL _CategoryDAL;
 
-        public CategoryManager(ICategoryService categoryService)
+        public CategoryManager(ICategoryDAL categoryDAL)
         {
-            _categoryService = categoryService;
+            _CategoryDAL = categoryDAL;
         }
 
         public void Add(Category t)
         {
-            _categoryService.Add(t);
+            _CategoryDAL.Add(t);
         }
 
         public void Delete(Category t)
         {
-            _categoryService.Delete(t);
+            _CategoryDAL.Delete(t);
         }
 
         public List<Category> GetAll()
         {
-            return _categoryService.GetAll();
+            return _CategoryDAL.GetAll();
         }
 
         public Category GetByID(int id)
         {
-            return _categoryService.GetByID(id);
+            return _CategoryDAL.GetByID(id);
         }
 
         public void Update(Category t)
         {
-            _categoryService.Update(t);
+            _CategoryDAL.Update(t);
         }
     }
 }

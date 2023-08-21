@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
-    public class CustomerManager : ICustomerService
+    public class CustomerManager : IGenericService<Customer>
     {
         private ICustomerDAL _customerDAL;
 
